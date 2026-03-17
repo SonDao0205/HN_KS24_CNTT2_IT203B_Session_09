@@ -1,4 +1,5 @@
 package com.traffic.simulator.entity;
 
-public class VehicleType {
+public enum VehicleType {
+    MOTORBIKE, CAR, TRUCK, AMBULANCE
 }
