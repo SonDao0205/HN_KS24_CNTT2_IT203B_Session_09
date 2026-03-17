@@ -7,7 +7,7 @@ public abstract class Vehicle implements Runnable {
     private String id;
     private double speed;
     private int priority;
-    protected VehicleType vehicleType;
+    private VehicleType vehicleType;
 
     public Vehicle(String id, double speed, int priority, VehicleType vehicleType) {
         this.id = id;
