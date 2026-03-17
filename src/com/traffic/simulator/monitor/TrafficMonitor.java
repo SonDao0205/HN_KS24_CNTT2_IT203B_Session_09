@@ -32,7 +32,7 @@ public class TrafficMonitor {
     // Ghi nhận kẹt xe
     public void recordJam() {
         jamCount.incrementAndGet();
-        printLiveLog("⚠️ Kẹt xe xảy ra!");
+        LogUtil.log("⚠️ Kẹt xe xảy ra!");
     }
 
 
