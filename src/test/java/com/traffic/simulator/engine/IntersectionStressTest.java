@@ -1,4 +1,4 @@
-package test.java.com.traffic.simulator.engine;
+package java.com.traffic.simulator.engine;
 
 public class IntersectionStressTest {
 }

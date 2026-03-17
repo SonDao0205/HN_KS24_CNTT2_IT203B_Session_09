@@ -1,4 +1,4 @@
-package test.java.com.traffic.simulator.pattern;
+package java.com.traffic.simulator.pattern;
 
 public class VehicleFactoryTest {
 }
