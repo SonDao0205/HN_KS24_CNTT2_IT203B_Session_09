@@ -21,4 +21,22 @@ public class VehicleFactory {
         }
     }
 
+    public static Vehicle crate(VehicleType type, String id) {
+        switch (type) {
+            case MOTORBIKE: {
+                return new Motorbike(id);
+            }
+            case CAR: {
+                return new Car(id);
+            }
+            case TRUCK: {
+                return new Truck(id);
+            }
+            case AMBULANCE: {
+                return new Ambulance(id);
+            }
+            default:
+                throw new IllegalArgumentException("Xe khono hp le");
+        }
+    }
 }
