@@ -17,6 +17,10 @@ public class TrafficLight implements TrafficSubject, Runnable {
         this.currentState = new GreenState();
     }
 
+    public TrafficLightState getCurrentState() {
+        return currentState;
+    }
+
     // ================= Observer =================
     @Override
     public void subscribe(TrafficObserver observer) {
