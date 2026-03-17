@@ -6,11 +6,13 @@ import com.traffic.simulator.engine.Intersection;
 public class StandardVehicle extends Vehicle {
 
     private Intersection intersection;
+    protected long crossTime;
 
     public StandardVehicle(String id, double speed, VehicleType vehicleType,
-                           Intersection intersection) {
+                           Intersection intersection, long crossTime) {
         super(id, speed, 1, vehicleType); // xe thường có priority = 1
         this.intersection = intersection;
+        this.crossTime = crossTime;
     }
 
     @Override
@@ -25,7 +27,7 @@ public class StandardVehicle extends Vehicle {
 
             // 3. Nếu được phép đi qua
             System.out.println("Xe " + getId() + " đang đi qua ngã tư");
-            Thread.sleep(1000);
+            Thread.sleep(crossTime);
 
             // 4. Rời giao lộ
             intersection.exit(this);
