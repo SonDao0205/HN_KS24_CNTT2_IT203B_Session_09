@@ -1,13 +1,19 @@
 package com.traffic.simulator.entity.vehicle;
-
-import java.util.Scanner;
-
-
 import com.traffic.simulator.entity.VehicleType;
 
-public class Truck extends StandardVehicle {
+public class Truck extends Vehicle {
+
     public Truck(String id) {
-        // speed=1, crossTime=3s (3000ms)
-        super(id, 1, 3000, VehicleType.TRUCK);
+        super(id, 1.0, 0, VehicleType.TRUCK);
+    }
+
+    @Override
+    public void move() {
+        System.out.println(vehicleType + " #" + getId() + " đang bò qua ngã tư...");
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
     }
 }

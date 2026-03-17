@@ -6,4 +6,5 @@ public interface TrafficLightState {
     void handle(TrafficLight context);
     String getColorName();
     int getDurationSeconds();
+    boolean canVehiclePass();
 }

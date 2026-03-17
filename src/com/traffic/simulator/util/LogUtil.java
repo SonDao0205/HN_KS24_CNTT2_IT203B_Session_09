@@ -1,5 +1,7 @@
 package com.traffic.simulator.util;
 
+import com.traffic.simulator.entity.VehicleType;
+
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
