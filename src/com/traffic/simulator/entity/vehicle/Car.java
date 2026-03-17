@@ -1,4 +1,5 @@
 package com.traffic.simulator.entity.vehicle;
+
 import com.traffic.simulator.entity.VehicleType;
 
 public class Car extends Vehicle {
