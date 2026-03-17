@@ -2,16 +2,18 @@ package com.traffic.simulator.entity.vehicle;
 import com.traffic.simulator.entity.VehicleType;
 
 public class Ambulance extends PriorityVehicle {
-    public Ambulance(String id) {
-        super(id, 4, 1, true, VehicleType.AMBULANCE);
-    }
 
-    public void activateSiren() {
-        System.out.println("Xe cứu thương " + id + " đang hú còi ưu tiên");
+    public Ambulance(String id) {
+        super(id, 4.0, 1, VehicleType.AMBULANCE);
     }
 
     @Override
-    public void move() {
-        activateSiren();
+    public void activateSiren() {
+        System.out.println("🚑 [SIREN] " + getId() + ": WOO-WOO-WOO!");
+    }
+
+    @Override
+    protected long getCrossTime() {
+        return 1000;
     }
 }

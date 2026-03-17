@@ -3,8 +3,8 @@ import com.traffic.simulator.entity.VehicleType;
 
 public abstract class PriorityVehicle extends Vehicle {
 
-    public PriorityVehicle(String id, int speed, int crossTime, VehicleType type) {
-        super(id, speed, crossTime, true, type);
+    public PriorityVehicle(String id, double speed, int priority, VehicleType vehicleType) {
+        super(id, speed, priority, vehicleType);
     }
 
     public abstract void activateSiren();
@@ -12,12 +12,17 @@ public abstract class PriorityVehicle extends Vehicle {
     @Override
     public void move() {
         activateSiren();
-        System.out.println(">>> " + this.toString() + " đang ưu tiên đi thẳng qua ngã tư");
+
+        System.out.println(">>> [ƯU TIÊN] " + vehicleType + " #" + getId() + " đang vượt ngã tư...");
 
         try {
-            Intersection.getInstance().accessIntersection(this);
+            long crossTime = getCrossTime();
+            Thread.sleep(crossTime);
+            System.out.println("<<< [XONG] " + vehicleType + " #" + getId() + " đã ra khỏi ngã tư.");
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
     }
+
+    protected abstract long getCrossTime();
 }
